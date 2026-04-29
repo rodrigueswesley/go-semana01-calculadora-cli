@@ -18,10 +18,14 @@ func multiplicacao(a, b float64) float64 {
 	return a * b
 }
 
+func dividir(a, b float64) float64 {
+	return a / b
+}
+
 func main() {
 
 	fmt.Println("=== CALCULADORA BÁSICA ===")
-	fmt.Println("Operaçãoes: +, - e *. Digite 'sair' para encerrar.")
+	fmt.Println("Operaçãoes: +, - , * e /. Digite 'sair' para encerrar.")
 
 	for {
 		fmt.Print("\nOperação: ")
@@ -43,6 +47,12 @@ func main() {
 			fmt.Println("Resultado: \n", subtracao(num1, num2))
 		} else if operacao == "*" {
 			fmt.Println("Resultado: \n", multiplicacao(num1, num2))
+		} else if operacao == "/" {
+			if num2 == 0 {
+				fmt.Println("ERRO: Não é possível dividir nenhum numero por 0!")
+			} else {
+				fmt.Println("Resultado: \n", dividir(num1, num2))
+			}
 		} else {
 			fmt.Println("Operacao Invalida.")
 		}
